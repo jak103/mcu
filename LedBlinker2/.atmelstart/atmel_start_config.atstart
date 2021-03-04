@@ -251,11 +251,23 @@ pads:
     mode: Digital output
     user_label: PA3
     configuration: null
+  RADIO_CS_CONFIG:
+    name: PA7
+    definition: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::pad::PA7
+    mode: Digital output
+    user_label: RADIO_CS_CONFIG
+    configuration: null
   LED_Pin:
     name: PB7
     definition: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::pad::PB7
     mode: Digital output
     user_label: LED_Pin
+    configuration: null
+  RADIO_RESET:
+    name: PB6
+    definition: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::pad::PB6
+    mode: Digital output
+    user_label: RADIO_RESET
     configuration: null
   PB3:
     name: PB3
@@ -268,6 +280,12 @@ pads:
     definition: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::pad::PB2
     mode: Digital output
     user_label: PB2
+    configuration: null
+  RADIO_CS_DATA:
+    name: PC3
+    definition: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::pad::PC3
+    mode: Digital output
+    user_label: RADIO_CS_DATA
     configuration: null
   Button_Pin:
     name: PC4
@@ -284,6 +302,13 @@ pads:
     configuration: null
 toolchain_options:
 - definition:
+    identifier: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::environment_definition::All:Microchip.Studio.xc8:7.0.0
+  configuration:
+    compiler_config:
+      xc8_compiler_miscellaneous_OtherFlags: -std=gnu99
+    linker_config:
+      xc8_linker_miscellaneous_LinkerFlags: ''
+- definition:
     identifier: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::environment_definition::All:Microchip.Studio.gcc:7.0.0
   configuration:
     compiler_config:
@@ -297,10 +322,3 @@ toolchain_options:
       avrgcc_compiler_miscellaneous_OtherFlags: -std=gnu99
     linker_config:
       avrgcc_linker_miscellaneous_LinkerFlags: ''
-- definition:
-    identifier: Atmel:ATtiny160x_drivers:1.0.0::ATtiny1607-MRF::environment_definition::All:Microchip.Studio.xc8:7.0.0
-  configuration:
-    compiler_config:
-      xc8_compiler_miscellaneous_OtherFlags: -std=gnu99
-    linker_config:
-      xc8_linker_miscellaneous_LinkerFlags: ''

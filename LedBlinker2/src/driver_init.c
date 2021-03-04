@@ -116,6 +116,32 @@ void system_init()
 {
 	mcu_init();
 
+	/* PORT setting on PA7 */
+
+	// Set pin direction to output
+
+	RADIO_CS_CONFIG_set_level(
+	    // <y> Initial level
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	RADIO_CS_CONFIG_set_dir(PORT_DIR_OUT);
+
+	/* PORT setting on PB6 */
+
+	// Set pin direction to output
+
+	RADIO_RESET_set_level(
+	    // <y> Initial level
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	RADIO_RESET_set_dir(PORT_DIR_OUT);
+
 	/* PORT setting on PB7 */
 
 	// Set pin direction to output
@@ -128,6 +154,19 @@ void system_init()
 	    false);
 
 	LED_Pin_set_dir(PORT_DIR_OUT);
+
+	/* PORT setting on PC3 */
+
+	// Set pin direction to output
+
+	RADIO_CS_DATA_set_level(
+	    // <y> Initial level
+	    // <id> pad_initial_level
+	    // <false"> Low
+	    // <true"> High
+	    false);
+
+	RADIO_CS_DATA_set_dir(PORT_DIR_OUT);
 
 	/* PORT setting on PC4 */
 
